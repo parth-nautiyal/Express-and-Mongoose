@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Product</title>
+    <title>Edit</title>
 </head>
 <body>
-    <h1>Add a product</h1>
-    <form action="/products" method="post">
+    <h1>Changing stuff</h1>
+    <form action="/products/<%= product._id %>?_method=PUT" method="post">
         <label for="name">Name of Product</label>
-        <input type="text" id="name" name="name">
+        <input type="text" id="name" name="name" value="<%=product.name %>">
         <label for="price">Price</label>
-        <input type="number" name="price" id="price">
+        <input type="number" name="price" id="price" value="<%= product.price %>">
         <label for="category">Category</label>
         <select name="category" id="category">
             <% for( let category of categories){ %>
-                <option value="<%= category %>"><%= category %></option>
+                <option value="<%= category %>" <%= product.category===category ? 'selected': '' %>><%= category %></option>
             <% } %>
         </select>
-        <button>Submit</button>
+        <button>submit</button>
     </form>
-    <a href="/products">Cancel</a>
 </body>
 </html>
