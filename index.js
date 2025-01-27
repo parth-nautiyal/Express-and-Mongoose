@@ -6,8 +6,6 @@ const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const AppError = require('./AppError')
 
-
-
 app.use(methodOverride('_method'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
