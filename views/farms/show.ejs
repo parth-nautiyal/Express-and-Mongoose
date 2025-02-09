@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show</title>
+</head>
+<body>
+    <h1><%= farm.name %></h1>
+    <ul>City = <%= farm.city %></ul>
+    <ul>Email = <%= farm.email %></ul>
+    <% if(farm.products){ %>
+        <h2>Products:</h2>
+        <ul>
+            <% for(let product of farm.products){ %>
+                <li><%= product.name %></li>
+            <% } %>
+        </ul>
+    <% } %>
+    <div>
+        <a href="/farms">All Farms</a>
+    </div>
+    <div>
+        <a href="/farms/<%= farm.id %>/products/new">Add Product</a>
+    </div>
+</body>
+</html>

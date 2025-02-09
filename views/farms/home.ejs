@@ -6,18 +6,17 @@
     <title>home</title>
 </head>
 <body>
-    <h1><%= category%> Products</h1>
+    <h1>Farms</h1>
     <ul>
-        <% for(let p of products){ %>
-            <li> <a href="/products/<%= p.id %>"><%= p.name %></a> </li>
+        <% for(let f of farms){ %>
+            <li> <a href="/farms/<%= f.id %>"><%= f.name %></a> </li>
         <% } %>
     </ul>
-    <% if( category !=='All'){ %>
-        <a href="/products">All products</a>
-    <% } %>
-    <a href="/products/new">Add a Product</a>
     <div>
-        <a href="/farms">Add a Farm</a>
+        <a href="/products">All products</a>
+    </div>
+    <div>
+        <a href="/farms/new">Add a Farm</a>
     </div>
 </body>
 </html>
