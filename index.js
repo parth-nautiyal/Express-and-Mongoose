@@ -39,7 +39,10 @@ app.post('/farms', async(req, res) => {
     await farm.save()
     res.redirect('/farms')
 })
-
+app.delete('/farms/:id', async(req, res) => {
+    const farm = await Farm.findByIdAndDelete(req.params.id)
+    res.redirect('/farms')
+})
 app.get('/products/:id/edit', async (req, res) => {
     const { id } = req.params;
     const product = await Product.findById(id);
